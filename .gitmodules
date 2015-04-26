@@ -28,9 +28,6 @@
 [submodule "bundle/taglist.vim"]
 	path = bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
-[submodule "unite.vim"]
-	path = unite.vim
-	url = https://github.com/Shougo/unite.vim.git
 [submodule "bundle/vim.airline"]
 	path = bundle/vim.airline
 	url = https://github.com/bling/vim-airline.git
@@ -52,3 +49,6 @@
 [submodule "bundle/vim-twig"]
 	path = bundle/vim-twig
 	url = https://github.com/evidens/vim-twig.git
+[submodule "bundle/unite"]
+	path = bundle/unite
+	url = https://github.com/Shougo/unite.vim.git
