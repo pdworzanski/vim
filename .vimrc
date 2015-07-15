@@ -35,12 +35,15 @@ let Tlist_Show_One_File=1
 "let Tlist_Use_Horiz_Window=1
 
 " Tagbar
+let g:tagbar_sort = 0
+let g:tagbar_show_visibility = 0
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
 " autocmd FileType * nested :call tagbar#autoopen(0)
 
 " Code sniffer
-let g:phpqa_codesniffer_args = "--standard=PSR2"
-let g:phpqa_codesniffer_cmd='/home/przemek/.phpbrew/php/php-5.3.29/bin/phpcs'
+""let g:phpqa_codesniffer_args = "--standard=PSR2"
+"let g:phpqa_codesniffer_cmd='/home/przemek/.phpbrew/php/php-5.3.29/bin/phpcs'
+""let g:phpqa_codesniffer_cmd='/home/polcode/.phpbrew/php/php-5.3.28/bin/phpcs'
 let g:phpqa_messdetector_autorun = 0
 " Don't run codesniffer on save (default = 1)
 "let g:phpqa_codesniffer_autorun = 0
@@ -76,5 +79,16 @@ nmap <silent> <Leader>, :nohlsearch<CR>
 nnoremap <silent> <F3> :TlistToggle<CR>
 nnoremap <silent> <F4> :TagbarToggle<CR>
 
+map <Leader>b :CtrlPBuffer<CR>
 
+nnoremap <Leader>s> :!bash<CR>
+
+" copy filename of current buffer
+:nmap <Leader>ccc :let @+ = expand("%:t")<CR>
+
+" copy relative path to current buffer
+:nmap <Leader>c :let @+ = expand("%")<CR>
+
+" copy full path to current buffer
+:nmap <Leader>cc :let @+ = expand("%:p")<CR>
 
