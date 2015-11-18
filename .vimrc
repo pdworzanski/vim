@@ -6,6 +6,9 @@ autocmd vimenter * :set number
 
 let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeShowBookmarks=1
+"let NERDTreeMapOpenInTab='\r'
+"let NERDTreeMapOpenInTab='<ENTER>'
+
 
 set guitablabel=%t
 set mouse=a
@@ -58,7 +61,7 @@ colorscheme wells-colors
 let mapleader=";"
 
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>e :NERDTreeFind<CR>
+map <Leader>e :NERDTreeFind<CR>zz
 
 " Reload current file
 map <Leader>r :e!<CR>
@@ -91,4 +94,48 @@ nnoremap <Leader>s> :!bash<CR>
 
 " copy full path to current buffer
 :nmap <Leader>cc :let @+ = expand("%:p")<CR>
+
+" auto open quickfix after :grep & :make
+augroup QuickFixAutoload
+autocmd QuickFixCmdPost [^l]* nested botright cwindow
+autocmd QuickFixCmdPost    l* nested botright lwindow
+augroup END
+
+" Grep for word under the cursor
+" command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " src/src"<cr>:copen<cr>
+
+" CtrlP open in new tab on enter key
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
+let g:symfony_app_console_path= "src/app/console"
+map <Leader>o :execute ":!"g:symfony_enable_shell_cmd<CR>
+
+" first set path
+set path+=**
+
+" jump to a twig view in symfony
+function! s:SfJumpToView()
+    mark C
+    normal! ]M
+    let end = line(".")
+    normal! [m
+    try
+        call search('v[^.:]+.html.twig', '', end)
+        normal! gf
+    catch
+        normal! g`C
+        echohl WarningMsg | echomsg "Template file not found" | echohl None
+    endtry
+endfunction
+com! SfJumpToView call s:SfJumpToView()
+
+" create a mapping only in a Controller file
+autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
+
+" Change default PHP manual shortcut
+let g:php_manual_online_search_shortcut = '<C-S-k>'
 

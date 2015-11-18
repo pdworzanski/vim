@@ -1,4 +1,3 @@
-autoload/vimproc_*.so
 autoload/vimproc_*.dll
 autoload/vimproc_*.dll.old
 autoload/vimproc_*.dll.manifest
