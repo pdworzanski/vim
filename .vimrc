@@ -19,6 +19,7 @@ set incsearch
 set nowrap
 set clipboard=unnamedplus
 set cursorline
+set splitright
 
 " Turn off swap/backups
 set nobackup
@@ -39,7 +40,7 @@ let Tlist_Show_One_File=1
 
 " Tagbar
 let g:tagbar_sort = 0
-let g:tagbar_show_visibility = 0
+let g:tagbar_show_visibility = 1
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
 " autocmd FileType * nested :call tagbar#autoopen(0)
 
@@ -103,7 +104,8 @@ augroup END
 
 " Grep for word under the cursor
 " command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
-nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " src/src"<cr>:copen<cr>
+nnoremap <leader>sg :silent execute "grep! -R " . input('Searching phrase: ') . " src/src"<cr>:copen<cr>
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand('<C-R>"')) . " %"<cr>:copen<cr>:colorscheme wells-colors<cr>
 
 " CtrlP open in new tab on enter key
 let g:ctrlp_prompt_mappings = {
@@ -138,4 +140,6 @@ autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
 
 " Change default PHP manual shortcut
 let g:php_manual_online_search_shortcut = '<C-S-k>'
+
+set wildignore+=*/web/css/*,*/web/js/*
 
