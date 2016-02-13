@@ -45,15 +45,16 @@ let g:tagbar_show_visibility = 1
 " autocmd FileType * nested :call tagbar#autoopen(0)
 
 " Code sniffer
-""let g:phpqa_codesniffer_args = "--standard=PSR2"
-"let g:phpqa_codesniffer_cmd='/home/przemek/.phpbrew/php/php-5.3.29/bin/phpcs'
+let g:phpqa_codesniffer_args = "--standard=PSR2"
+let g:phpqa_codesniffer_cmd='/home/przemek/.phpbrew/php/php-5.3.29/bin/phpcs'
 ""let g:phpqa_codesniffer_cmd='/home/polcode/.phpbrew/php/php-5.3.28/bin/phpcs'
 let g:phpqa_messdetector_autorun = 0
 " Don't run codesniffer on save (default = 1)
-"let g:phpqa_codesniffer_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
 let g:phpqa_open_loc = 1
 
-let g:phpcomplete_index_composer_command="php ../composer.phar"
+let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
+"let g:phpcomplete_index_composer_command="php ../composer.phar"
 autocmd FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 colorscheme monokai
