@@ -85,3 +85,24 @@
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
+[submodule "bundle/DBGPavim"]
+	path = bundle/DBGPavim
+	url = https://github.com/brookhong/DBGPavim.git
+[submodule "bundle/vim-grepper"]
+	path = bundle/vim-grepper
+	url = https://github.com/mhinz/vim-grepper.git
+[submodule "bundle/tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "bundle/tagbar-phpctags.vim"]
+	path = bundle/tagbar-phpctags.vim
+	url = https://github.com/vim-php/tagbar-phpctags.vim.git
+[submodule "bundle/bufstop"]
+	path = bundle/bufstop
+	url = https://github.com/mihaifm/bufstop.git
+[submodule "bundle/vim-php-namespace"]
+	path = bundle/vim-php-namespace
+	url = https://github.com/arnaud-lb/vim-php-namespace.git
+[submodule "bundle/vim-php-refactoring-toolbox"]
+	path = bundle/vim-php-refactoring-toolbox
+	url = https://github.com/adoy/vim-php-refactoring-toolbox.git
