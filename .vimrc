@@ -97,6 +97,9 @@ map <Leader>b :CtrlPBuffer<CR>
 
 nnoremap <Leader>s> :!bash<CR>
 
+" copy filename of current buffer without extension
+:nmap <Leader>cccc :let @+ = expand("%:t:r")<CR>
+
 " copy filename of current buffer
 :nmap <Leader>ccc :let @+ = expand("%:t")<CR>
 
