@@ -7,5 +7,7 @@ git submodule init
 
 git submodule update
 
+git submodule update --init bundle/vim-php-namespace
+
 git submodule rm lib/billboard
 

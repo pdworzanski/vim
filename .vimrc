@@ -62,7 +62,7 @@ let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
 let g:phpqa_open_loc = 1
 
-let g:phpcomplete_index_composer_command='/usr/bin/composer'
+let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
 "let g:phpcomplete_index_composer_command="php ../composer.phar"
 autocmd FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
