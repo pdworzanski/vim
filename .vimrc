@@ -156,6 +156,10 @@ set wildignore+=*/web/css/*,*/web/js/*
 " let g:dbgPavimPort = 9009
 "let g:dbgPavimBreakAtEntry = 0
 
+" Sort existing use statements alphabetically
+autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
 " Automatically adds the corresponding use statement for the name under the cursor
 
 function! IPhpInsertUse()
@@ -167,9 +171,9 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " Expands the name under the cursor to its fully qualified name.
 
-" function! IPhpExpandClass()
-"     call PhpExpandClass()
-"     call feedkeys('a', 'n')
-" endfunction
-" autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
-" autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>cf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>cf :call PhpExpandClass()<CR>
