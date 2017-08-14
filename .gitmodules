@@ -106,3 +106,9 @@
 [submodule "bundle/vim-php-refactoring-toolbox"]
 	path = bundle/vim-php-refactoring-toolbox
 	url = https://github.com/adoy/vim-php-refactoring-toolbox.git
+[submodule "bundle/ultisnips-php"]
+	path = bundle/ultisnips-php
+	url = git@github.com:algotech/ultisnips-php.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
