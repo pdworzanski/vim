@@ -124,6 +124,3 @@
 [submodule "bundle/vim-symfony-qbbr"]
 	path = bundle/vim-symfony-qbbr
 	url = git@github.com:qbbr/vim-symfony.git
-[submodule "bundle/vim-numbertoggle"]
-	path = bundle/vim-numbertoggle
-	url = git@github.com:jeffkreeftmeijer/vim-numbertoggle.git
